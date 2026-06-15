@@ -9,18 +9,52 @@ export default function Contact() {
   const { contact } = portfolioData;
   const [ref, isVisible] = useScrollAnimation();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState(null);
+  const [status, setStatus] = useState(null); // 'loading', 'success', 'error'
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // For now, just show success. Wire up to your preferred service.
-    setStatus('success');
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setStatus(null), 4000);
+    setStatus('loading');
+
+    // Web3Forms API Integration
+    // To make this work, replace this string with your actual Web3Forms Access Key
+    const accessKey = "YOUR_WEB3FORMS_ACCESS_KEY_HERE"; 
+
+    if (accessKey === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
+      setStatus('error');
+      alert("Please provide your Web3Forms Access Key to the AI to activate the contact form!");
+      return;
+    }
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          ...formData
+        })
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+    }
+
+    setTimeout(() => setStatus(null), 5000);
   };
 
   return (
@@ -107,14 +141,28 @@ export default function Contact() {
               />
             </div>
 
-            <Button type="submit">
-              <i className="fas fa-paper-plane" style={{ marginRight: '8px' }} />
-              Send Message
+            <Button type="submit" disabled={status === 'loading'}>
+              {status === 'loading' ? (
+                <>
+                  <i className="fas fa-spinner fa-spin" style={{ marginRight: '8px' }} />
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <i className="fas fa-paper-plane" style={{ marginRight: '8px' }} />
+                  Send Message
+                </>
+              )}
             </Button>
 
             {status === 'success' && (
               <p style={{ color: 'var(--accent-color)', textAlign: 'center', marginTop: '10px' }}>
-                ✓ Message sent successfully!
+                ✓ Message sent successfully! I'll get back to you soon.
+              </p>
+            )}
+            {status === 'error' && (
+              <p style={{ color: '#ff4a5a', textAlign: 'center', marginTop: '10px' }}>
+                ✗ Oops! Something went wrong. Make sure the Access Key is configured!
               </p>
             )}
           </form>

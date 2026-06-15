@@ -25,32 +25,19 @@ import GameStats from './components/GameStats';
 import AchievementToast from './components/AchievementToast';
 import Terminal from './components/Terminal';
 
+import CustomCursor from './components/ui/CustomCursor';
+import ScrollProgress from './components/ui/ScrollProgress';
+
 export default function App() {
   const { features } = portfolioData;
-  const gamification = useGamification();
-
-  const gamificationEnabled = features.enableGamification;
 
   return (
     <>
+      <CustomCursor />
+      <ScrollProgress />
+      
       {/* Background */}
       {features.enableCyberGrid && <CyberGrid />}
-
-      {/* Gamification Overlays */}
-      {gamificationEnabled && (
-        <>
-          <XPBar progress={gamification.scrollProgress} />
-          <GameStats
-            level={gamification.level}
-            xpInCurrentLevel={gamification.xpInCurrentLevel}
-            xpPerLevel={gamification.xpPerLevel}
-            achievementCount={gamification.achievementCount}
-            totalAchievements={gamification.totalAchievements}
-          />
-          <AchievementToast achievement={gamification.currentToast} />
-          <Terminal onOpen={() => gamification.unlockAchievement('hacker')} />
-        </>
-      )}
 
       {/* Navigation */}
       <Navbar />
@@ -58,13 +45,13 @@ export default function App() {
       {/* Main Content */}
       <main>
         <Hero />
-        <About onVisible={() => gamificationEnabled && gamification.checkSectionAchievement('about')} />
-        <Skills onVisible={() => gamificationEnabled && gamification.checkSectionAchievement('skills')} />
+        <About />
+        <Skills />
         <FrontendSkills />
         <Certifications />
         <Education />
         <Training />
-        <Projects onVisible={() => gamificationEnabled && gamification.checkSectionAchievement('projects')} />
+        <Projects />
         <Responsibilities />
         <ResumeSection />
         <Contact />
