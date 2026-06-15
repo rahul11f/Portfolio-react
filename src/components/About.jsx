@@ -24,7 +24,7 @@ export default function About({ onVisible }) {
               <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
               <pointLight position={[-10, -10, -10]} intensity={0.5} color="#00ff88" />
               <FloatingLaptop />
-              <OrbitControls enableZoom={false} enablePan={false} />
+              <OrbitControls enableZoom={false} autoRotate={true} autoRotateSpeed={1} />
             </Canvas>
           </div>
 

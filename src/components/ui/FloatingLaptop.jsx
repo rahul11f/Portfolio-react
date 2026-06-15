@@ -66,10 +66,28 @@ export default function FloatingLaptop() {
           <meshStandardMaterial color="#222222" roughness={0.7} metalness={0.8} />
         </Box>
 
-        {/* Keyboard Area (indent) */}
-        <Box args={[1.8, 0.02, 0.8]} position={[0, 0.05, -0.1]}>
-          <meshStandardMaterial color="#111111" />
-        </Box>
+        {/* Keyboard Keys */}
+        <group position={[0, 0.06, -0.1]}>
+          {[...Array(5)].map((_, row) => 
+            [...Array(14)].map((_, col) => (
+              <Box 
+                key={`${row}-${col}`} 
+                args={[0.1, 0.02, 0.1]} 
+                position={[
+                  (col - 6.5) * 0.12, 
+                  0, 
+                  (row - 2) * 0.14
+                ]}
+              >
+                <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
+              </Box>
+            ))
+          )}
+          {/* Spacebar */}
+          <Box args={[0.6, 0.02, 0.12]} position={[0, 0, 0.42]}>
+            <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
+          </Box>
+        </group>
         {/* Glowing Keyboard Edge */}
         <Box args={[1.82, 0.01, 0.82]} position={[0, 0.04, -0.1]}>
           <meshStandardMaterial color="#00ff88" emissive="#00ff88" emissiveIntensity={0.5} />
