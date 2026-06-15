@@ -104,7 +104,6 @@ export default function FloatingLaptop() {
             color="#00ff88"
             anchorX="left"
             anchorY="top"
-            font="https://fonts.gstatic.com/s/firamono/v14/N0bX2SlFPv1weX4RVZDQd-SX8A.woff"
             lineHeight={1.5}
           >
             {displayedCode}
