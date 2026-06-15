@@ -20,10 +20,9 @@ export default function Contact() {
     setStatus('loading');
 
     // Web3Forms API Integration
-    // To make this work, replace this string with your actual Web3Forms Access Key
-    const accessKey = "YOUR_WEB3FORMS_ACCESS_KEY_HERE"; 
+    const accessKey = "779735d3-ea98-4629-ab18-10ccffd1a938"; 
 
-    if (accessKey === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
+    if (!accessKey || accessKey === "YOUR_WEB3FORMS_ACCESS_KEY_HERE") {
       setStatus('error');
       alert("Please provide your Web3Forms Access Key to the AI to activate the contact form!");
       return;
