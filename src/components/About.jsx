@@ -18,7 +18,7 @@ export default function About({ onVisible }) {
         <SectionTitle>{about.title}</SectionTitle>
 
         <div className={`about__content fade-in ${isVisible ? 'visible' : ''}`}>
-          <div className="about__image" style={{ height: '400px', cursor: 'grab', background: 'rgba(0,0,0,0.2)', borderRadius: 'var(--border-radius)' }}>
+          <div className="about__3d-container" style={{ height: '400px', cursor: 'grab' }}>
             <Canvas camera={{ position: [0, 0, 6], fov: 45 }}>
               <ambientLight intensity={0.5} />
               <pointLight position={[10, 10, 10]} intensity={1} color="#00ff88" />
