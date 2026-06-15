@@ -1,6 +1,9 @@
 import { portfolioData } from '../data/portfolioData';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SectionTitle from './ui/SectionTitle';
+import { Canvas } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
+import RoboticAvatar from './ui/RoboticAvatar';
 import './About.css';
 
 export default function About({ onVisible }) {
@@ -15,22 +18,14 @@ export default function About({ onVisible }) {
         <SectionTitle>{about.title}</SectionTitle>
 
         <div className={`about__content fade-in ${isVisible ? 'visible' : ''}`}>
-          <div 
-            className="about__3d-container" 
-            style={{ 
-              height: '400px', 
-              display: 'flex', 
-              alignItems: 'center', 
-              justifyContent: 'center', 
-              border: '2px dashed rgba(0, 255, 136, 0.3)', 
-              borderRadius: 'var(--border-radius)',
-              background: 'rgba(0, 255, 136, 0.02)'
-            }}
-          >
-            <div style={{ textAlign: 'center', color: 'var(--accent-color)' }}>
-              <i className="fas fa-robot" style={{ fontSize: '3rem', marginBottom: '15px', opacity: 0.8 }} />
-              <p style={{ fontWeight: '500', letterSpacing: '1px' }}>[ Reserved for 3D Robotic Animation ]</p>
-            </div>
+          <div className="about__3d-container" style={{ height: '400px', cursor: 'grab' }}>
+            <Canvas camera={{ position: [0, 2, 8], fov: 45 }}>
+              <ambientLight intensity={0.6} />
+              <pointLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
+              <pointLight position={[-10, -10, -10]} intensity={0.5} color="#00ccff" />
+              <RoboticAvatar />
+              <OrbitControls enableZoom={false} enablePan={false} />
+            </Canvas>
           </div>
 
           <div className="about__text">

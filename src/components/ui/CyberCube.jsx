@@ -13,7 +13,7 @@ export default function CyberCube() {
 
   return (
     <mesh ref={meshRef}>
-      <Icosahedron args={[1, 1]} scale={2.5}>
+      <Icosahedron args={[1, 1]} scale={2.0}>
         <MeshDistortMaterial
           color="#00ff88"
           attach="material"
@@ -24,7 +24,7 @@ export default function CyberCube() {
       </Icosahedron>
       
       {/* Inner solid core */}
-      <Icosahedron args={[1, 2]} scale={1.8}>
+      <Icosahedron args={[1, 2]} scale={1.4}>
         <meshStandardMaterial
           color="#0a0a0a"
           emissive="#00ccff"
