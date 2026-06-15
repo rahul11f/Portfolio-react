@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { portfolioData } from '../data/portfolioData';
 import ParticleBackground from './ui/ParticleBackground';
 import Button from './ui/Button';
-import Premium3DShapes from './ui/Premium3DShapes';
 import './Hero.css';
 
 export default function Hero() {
@@ -41,7 +40,6 @@ export default function Hero() {
   return (
     <section className="hero" id="hero">
       <div className="hero__bg-grid" aria-hidden="true" />
-      <Premium3DShapes />
 
       <div className="hero__shapes" aria-hidden="true">
         {[...Array(5)].map((_, i) => (
