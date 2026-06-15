@@ -79,13 +79,13 @@ export default function FloatingLaptop() {
                   (row - 2) * 0.14
                 ]}
               >
-                <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
+                <meshStandardMaterial color="#00ff88" emissive="#00ff88" emissiveIntensity={0.6} roughness={0.2} />
               </Box>
             ))
           )}
           {/* Spacebar */}
           <Box args={[0.6, 0.02, 0.12]} position={[0, 0, 0.42]}>
-            <meshStandardMaterial color="#0a0a0a" roughness={0.9} />
+            <meshStandardMaterial color="#00ff88" emissive="#00ff88" emissiveIntensity={0.6} roughness={0.2} />
           </Box>
         </group>
         {/* Glowing Keyboard Edge */}

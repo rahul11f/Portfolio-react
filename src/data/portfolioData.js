@@ -365,7 +365,7 @@ export const portfolioData = {
   // ⚙️ Feature Flags
   // ----------------------------------------------------------
   features: {
-    enableGamification: true, // XP bar, achievements, game stats, terminal
+    enableGamification: false, // XP bar, achievements, game stats, terminal
     enableParticles: true,    // Floating particle effects in hero
     enableCyberGrid: true,    // Animated cyber grid background
   },
