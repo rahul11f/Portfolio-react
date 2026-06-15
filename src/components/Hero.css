@@ -52,10 +52,27 @@
 .hero__shape:nth-child(4) { width: 100px; height: 100px; top: 10%; left: 70%; animation-delay: 1s; }
 .hero__shape:nth-child(5) { width: 50px; height: 50px; top: 50%; left: 50%; animation-delay: 3s; }
 
-.hero__content {
-  max-width: 650px;
+.hero__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 40px;
   position: relative;
   z-index: 2;
+}
+
+.hero__content {
+  flex: 1;
+  max-width: 650px;
+}
+
+.hero__3d-container {
+  flex: 1;
+  height: 500px;
+  width: 100%;
+  min-width: 300px;
+  cursor: grab;
 }
 
 .hero__greeting {
@@ -145,7 +162,17 @@
     display: none;
   }
 
-  .hero__content {
+  .hero__container {
+    flex-direction: column;
     padding-top: 80px;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__3d-container {
+    height: 350px;
+    margin-top: 40px;
   }
 }
