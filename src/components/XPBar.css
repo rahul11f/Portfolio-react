@@ -1,0 +1,18 @@
+.xp-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: var(--z-xp);
+  pointer-events: none;
+}
+
+.xp-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyber-blue), var(--accent-color));
+  transition: width 0.4s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+  border-radius: 0 2px 2px 0;
+}

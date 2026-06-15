@@ -1,0 +1,75 @@
+.responsibilities__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.responsibilities__card {
+  background: var(--glass-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  margin-bottom: 24px;
+  position: relative;
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--accent-color);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.responsibilities__card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.responsibilities__card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.15);
+}
+
+.responsibilities__card h3 {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.responsibilities__org {
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.responsibilities__date {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.responsibilities__card p:last-child {
+  margin-bottom: 0;
+}
+
+.responsibilities__list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.responsibilities__list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.responsibilities__list li::before {
+  content: "•";
+  color: var(--accent-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}

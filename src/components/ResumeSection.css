@@ -1,0 +1,24 @@
+.resume {
+  text-align: center;
+}
+
+.resume__description {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.resume__actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .resume__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}

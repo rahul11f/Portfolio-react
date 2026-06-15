@@ -1,0 +1,15 @@
+.cyber-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image:
+    linear-gradient(rgba(0, 255, 136, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: var(--z-grid);
+  opacity: 0.4;
+  animation: gridMove 20s linear infinite;
+  pointer-events: none;
+}

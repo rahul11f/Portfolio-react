@@ -1,0 +1,103 @@
+.contact__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 50px;
+}
+
+.contact__info h3 {
+  color: var(--accent-color);
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.contact__details {
+  margin-bottom: 30px;
+}
+
+.contact__detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.contact__detail i {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+}
+
+.contact__socials {
+  display: flex;
+  gap: 14px;
+}
+
+.contact__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(10, 10, 10, 0.8);
+  border-radius: 50%;
+  color: var(--text-color);
+  border: 1px solid var(--glass-border);
+  transition: all var(--transition-normal);
+  font-size: 1.1rem;
+}
+
+.contact__social:hover {
+  background: var(--accent-color);
+  color: var(--primary-color);
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact__form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.contact__form-input,
+.contact__form-textarea {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(26, 26, 26, 0.8);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-color);
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  transition: all var(--transition-normal);
+}
+
+.contact__form-textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact__form-input:focus,
+.contact__form-textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.contact__form-input::placeholder,
+.contact__form-textarea::placeholder {
+  color: rgba(179, 179, 179, 0.5);
+}

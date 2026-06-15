@@ -1,0 +1,101 @@
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.skills__card {
+  background: var(--glass-bg);
+  padding: 32px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.skills__card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skills__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.08), transparent);
+  transition: left var(--transition-slow);
+}
+
+.skills__card:hover::before {
+  left: 100%;
+}
+
+.skills__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 255, 136, 0.15);
+  border-color: var(--accent-color);
+}
+
+.skills__card-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+}
+
+.skills__card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.skills__card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.skills__progress {
+  margin-top: 18px;
+}
+
+.skills__progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+.skills__progress-label span:first-child {
+  color: var(--text-secondary);
+}
+
+.skills__progress-label span:last-child {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.skills__progress-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skills__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyber-blue), var(--accent-color));
+  border-radius: 3px;
+  width: 0%;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.skills__progress-fill.animate {
+  /* width is set inline */
+}

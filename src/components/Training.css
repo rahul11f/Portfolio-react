@@ -1,0 +1,54 @@
+.training__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.training__card {
+  background: var(--glass-bg);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  margin-bottom: 24px;
+  position: relative;
+  border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--accent-color);
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-normal);
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.training__card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.training__card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.15);
+  border-left-color: var(--cyber-blue);
+}
+
+.training__card h3 {
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.training__org {
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.training__date {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.training__card p:last-child {
+  margin-bottom: 0;
+}

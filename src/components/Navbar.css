@@ -1,0 +1,117 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: var(--z-nav);
+  background-color: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--glass-border);
+  animation: slideDown 0.8s ease-out;
+}
+
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 0;
+}
+
+.navbar__logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+  position: relative;
+  letter-spacing: 1px;
+}
+
+.navbar__logo::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: var(--accent-color);
+  transition: width var(--transition-normal);
+  box-shadow: var(--accent-glow);
+}
+
+.navbar__logo:hover::after {
+  width: 100%;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar__link {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 5px 0;
+  transition: color var(--transition-normal);
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background: var(--accent-color);
+  transition: width var(--transition-normal);
+  box-shadow: var(--accent-glow);
+}
+
+.navbar__link:hover {
+  color: var(--accent-color);
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+.navbar__mobile-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 5px;
+  transition: color var(--transition-normal);
+}
+
+.navbar__mobile-toggle:hover {
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .navbar__mobile-toggle {
+    display: block;
+  }
+
+  .navbar__links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    border-bottom: 1px solid var(--glass-border);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .navbar__links--open {
+    display: flex;
+  }
+}
