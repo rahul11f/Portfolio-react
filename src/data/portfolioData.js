@@ -315,8 +315,8 @@ export const portfolioData = {
       image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80",
       tags: ["React", "Vite", "Three.js", "Framer Motion", "Vercel"],
       links: {
-        github: "https://github.com/rahul11f/Portfolio-react",
-        demo: "https://react-portfolio-sable-five.vercel.app/",
+        github: "https://github.com/rahul11f/Portfolio-react.git",
+        demo: "https://rahul11f-react-portfolio.vercel.app/",
       },
     },
   ],
