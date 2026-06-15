@@ -300,13 +300,23 @@ export const portfolioData = {
       },
     },
     {
-      title: "Portfolio Website",
+      title: "HTML Portfolio",
       description: "A modern, responsive portfolio website showcasing my skills, projects, and achievements with a sleek black theme and interactive elements.",
       image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80",
       tags: ["HTML5", "CSS3", "JavaScript", "Responsive", "UI/UX"],
       links: {
         github: "https://github.com/rahul11f/Portfolio-Website",
         demo: "https://rahul11f-portfolio.vercel.app/",
+      },
+    },
+    {
+      title: "React 3D Portfolio",
+      description: "A highly interactive, cyberpunk-themed personal portfolio built with React, Vite, and React Three Fiber featuring gamification, 3D tilt effects, and an interactive terminal.",
+      image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80",
+      tags: ["React", "Vite", "Three.js", "Framer Motion", "Vercel"],
+      links: {
+        github: "https://github.com/rahul11f/Portfolio-react",
+        demo: "https://react-portfolio-sable-five.vercel.app/",
       },
     },
   ],
@@ -379,7 +389,7 @@ export const portfolioData = {
     about: "Rahul Kumar — Full Stack Developer & CS Student passionate about building innovative web applications.",
     skills: "Languages: Python, JavaScript, Java, C/C++ | Frameworks: React, Node.js, Django | Tools: Git, Docker, AWS",
     contact: "Email: raajrahul147@gmail.com | GitHub: github.com/rahul11f | LinkedIn: linkedin.com/in/rahul-kumar147/",
-    projects: "1. Toolate  2. Campus Opportunity Hub  3. RxAI  4. Certificate Website  5. Portfolio Website",
+    projects: "1. Toolate  2. Campus Opportunity Hub  3. RxAI  4. Certificate Website  5. HTML Portfolio  6. React 3D Portfolio",
     matrix: "Wake up, Neo... The Matrix has you...",
     hack: "ACCESS GRANTED. Welcome to the mainframe, agent.",
   },
