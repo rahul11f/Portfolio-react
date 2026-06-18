@@ -8,7 +8,7 @@ My personal portfolio website built with React.
 - Easy to set up and run locally.
 
 ## 🚀 Live Demo
-Check out the live version here: [Live Demo](https://rahul11f.github.io/Portfolio-react)
+Check out the live version here: [Live Demo](https://react-portfolio-sable-five.vercel.app)
 
 ## 🛠️ Installation & Setup
 
