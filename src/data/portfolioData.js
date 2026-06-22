@@ -15,7 +15,7 @@ export const portfolioData = {
     subtitle: "Computer Science Student | Tech Enthusiast",
     bio: "I'm a passionate computer science student and full-stack developer with a keen interest in building innovative web applications. I love turning ideas into reality through clean code and creative problem-solving.",
     avatarUrl: "", // Place your photo in public/ folder, e.g. "/avatar.jpg"
-    resumeUrl: "https://drive.google.com/file/d/1jn49njMQGKKQDm3Wxd6GlrmpAMZTGLy5/view?usp=drive_link
+    resumeUrl: "https://drive.google.com/file/d/1jn49njMQGKKQDm3Wxd6GlrmpAMZTGLy5/view?usp=drive_link",
   },
 
   // ----------------------------------------------------------
